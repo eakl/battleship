@@ -70,13 +70,13 @@ You'll sink the destroyer and the battlefield will look like this:
 [1,0,0,0,0,0,0,0,0,0]
 [1,0,0,1,1,0,0,1,0,0]
 [1,0,0,0,0,0,0,0,0,0]
-[0,0,3,0,0,0,0,1,0,0]
-[0,0,3,0,0,1,0,1,0,0]
+[0,0,2,0,0,0,0,1,0,0]
+[0,0,2,0,0,1,0,1,0,0]
 [0,0,0,0,0,0,0,1,0,0]
 [0,1,1,1,0,0,0,1,0,0]
 ```
 
-The coordinates you hit are replaces by the **3**'s
+The coordinates you hit are replaces by the **2**'s
 
 ## Restart the game
 

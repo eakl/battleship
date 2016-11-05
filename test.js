@@ -108,7 +108,7 @@ test('Missed shot is working', (t) => {
       [0,0,0,0,0],
       [0,0,1,0,0],
       [0,0,1,0,0],
-      [0,0,1,0,3],
+      [0,0,1,0,2],
       [0,0,1,0,0]
     ],
     position: [
@@ -149,11 +149,11 @@ test('Ship coordinates and battlefield are replaced successfully after a hit', (
       [0,1,0,0,0],
       [0,1,0,0,0],
       [0,1,0,0,0],
-      [0,0,0,3,1]
+      [0,0,0,2,1]
     ],
     position: [
       [{x: 1,y: 1},{x: 1,y: 2},{x: 1,y: 3}],
-      [3,{x: 4,y: 4}]
+      [2,{x: 4,y: 4}]
     ],
     counter: 1,
     finished: false
@@ -174,11 +174,11 @@ test('Ship coordinates are deleted successfully after a sink', (t) => {
       [0,1,0,0,0],
       [0,1,0,0,0],
       [0,1,0,0,0],
-      [0,0,0,3,1]
+      [0,0,0,2,1]
     ],
     position: [
       [{x: 1,y: 1},{x: 1,y: 2},{x: 1,y: 3}],
-      [3,{x: 4,y: 4}]
+      [2,{x: 4,y: 4}]
     ],
     counter: 0,
     finished: false
@@ -190,7 +190,7 @@ test('Ship coordinates are deleted successfully after a sink', (t) => {
       [0,1,0,0,0],
       [0,1,0,0,0],
       [0,1,0,0,0],
-      [0,0,0,3,3]
+      [0,0,0,2,2]
     ],
     position: [
       [{x: 1,y: 1},{x: 1,y: 2},{x: 1,y: 3}]
@@ -211,10 +211,10 @@ test('Win shot is working when all the ship have been sank ', (t) => {
   const dbBefore = {
     battlefield: [
       [0,0,0,0,0],
-      [0,3,0,0,0],
-      [0,3,0,0,0],
+      [0,2,0,0,0],
+      [0,2,0,0,0],
       [0,1,0,0,0],
-      [0,0,0,3,3]
+      [0,0,0,2,2]
     ],
     position: [
       [{x: 1,y: 3}]
@@ -226,10 +226,10 @@ test('Win shot is working when all the ship have been sank ', (t) => {
   const dbAfter = {
     battlefield: [
       [0,0,0,0,0],
-      [0,3,0,0,0],
-      [0,3,0,0,0],
-      [0,3,0,0,0],
-      [0,0,0,3,3]
+      [0,2,0,0,0],
+      [0,2,0,0,0],
+      [0,2,0,0,0],
+      [0,0,0,2,2]
     ],
     position: [],
     counter: 11,
@@ -248,8 +248,8 @@ test('You cannot make a shot when all the ships have been sunk', (t) => {
   const dbBefore = {
     battlefield: [
       [0,0,0],
-      [0,3,0],
-      [0,3,0]
+      [0,2,0],
+      [0,2,0]
     ],
     position: [],
     counter: 10,

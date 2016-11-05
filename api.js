@@ -1,7 +1,5 @@
 'use strict'
 
-const _ = require('lodash')
-
 const OCEAN_SIZE = 10
 const FLEET = [4, 3, 2, 1]
 
@@ -19,13 +17,13 @@ function attack (db, coords) {
   db.counter += 1
   const target = db.battlefield[y][x]
 
-  if (target === 3) {
+  if (target === 2) {
     response.db = db
     response.msg = 'You already hit this position!'
   }
 
   if (target === 0) {
-    db.battlefield[y][x] = 3
+    db.battlefield[y][x] = 2
     response.db = db
     response.msg = 'Miss'
   }
@@ -34,8 +32,8 @@ function attack (db, coords) {
     db.position.forEach((ship, idxShip) => {
       ship.forEach((block, idxBlock) => {
         if (block.x === x && block.y === y) {
-          db.position[idxShip][idxBlock] = 3
-          db.battlefield[y][x] = 3
+          db.position[idxShip][idxBlock] = 2
+          db.battlefield[y][x] = 2
         }
 
       })
@@ -45,7 +43,7 @@ function attack (db, coords) {
   }
 
   const sank = db.position.map(y => {
-    return y.every(x => x === 3)
+    return y.every(x => x === 2)
   })
 
   const isSank = sank.some(x => x === true)
@@ -185,7 +183,7 @@ function getShipCoords (coords, blocks) {
       {x: x-1, y: y}
     ]
     const filtered = list.filter(obj => obj.x >= 0  && obj.y >= 0)
-    const direction = _.sample(filtered)
+    const direction = random(filtered)
     diffX = direction.x - x
     diffY = direction.y - y
   }
@@ -211,6 +209,11 @@ function updateFleet (fleet) {
   }
 
   return newShop
+}
+
+function random (array) {
+  const idx = Math.floor(Math.random() * array.length)
+  return array[idx]
 }
 
 module.exports = {

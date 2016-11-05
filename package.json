@@ -10,8 +10,7 @@
   "author": "eakl",
   "license": "MIT",
   "dependencies": {
-    "express": "^4.14.0",
-    "lodash": "^4.16.6"
+    "express": "^4.14.0"
   },
   "devDependencies": {
     "tape": "^4.6.2",
